@@ -53,7 +53,7 @@ public class ClientServiceImplTest extends TestCase {
             Mockito.when(clientRepository.findById(any(Integer.class)))
                     .thenReturn(Optional.empty());
 
-            Client client = clientService.find(any(Integer.class));
+            clientService.find(any(Integer.class));
             Assert.fail();
         } catch (DataIntegrationException ex) {
             Assert.assertEquals(ex.getMessage(),"Cliente não existe");
